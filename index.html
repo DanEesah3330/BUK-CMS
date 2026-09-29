@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUK Clinic System</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-100 font-sans text-slate-800">
+        <header class="bg-emerald-800 text-white shadow-lg sticky top-0 z-50">
+            <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3 ">
+                <i class="fa-solid fa-notes-medical text-3xl text-emerald-300"></i>
+                <div>
+                    <h1 class="font-bold text-base leading-tight tracking-wide">BUK-CMS</h1>
+                    <p class="text-xs text-emerald-200">New Campus Health Services</p>
+                </div>
+            </div>
+
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                <button onclick="showView('home')" class="hover:text-emerald-200 font-semibold transition">Home</button>
+            </nav>
+
+             <div class="flex items-center space-x-3">
+                <div id="role-badge" class="hidden bg-emerald-900 border border-emerald-600 text-emerald-200 text-xs px-3 py-1.5 rounded-full items-center">
+                    <i class="fa-solid fa-user-circle mr-1.5"></i> Role: <strong id="current-role-title" class="ml-1 text-white">Receptionist</strong>
+                </div>
+                <button id="btn-login-toggle" onclick="showView('portal')" class="bg-emerald-500 hover:bg-emerald-600 text-white text-xs px-4 py-2 rounded font-semibold transition shadow">
+                    <i class="fa-solid fa-right-to-bracket mr-1"></i> Staff Login
+                </button>
+            </div>
+            
+        </header>
+
+         <!-- 1: HERO / HOME PAGE -->
+    <main id="view-home" class="block">
+
+                <!-- SECTION 1 -->
+         <section class="bg-gradient-to-r from-emerald-900 via-emerald-800 to-teal-900 text-white py-20 px-4">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-8">
+                    <span class="bg-emerald-700/60 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full border border-emerald-500/30">
+                        Official BUK Health Portal
+                    </span>
+                    <h2 class="text-3xl md:text-5xl font-extrabold leading-tight">
+                        Quality Healthcare Services for BUK Students
+                    </h2>
+                    <p class="text-emerald-100 text-sm md:text-base">
+                        Welcome to the Bayero University Kano (New Campus) Digital Clinic System. Providing fast, paperless, and secure medical care and record management for all students.
+                    </p>
+                    <div class="pt-4 md:py-12 flex flex-wrap gap-3">
+                        <button onclick="document.getElementById('how-it-works').scrollIntoView({behavior:'smooth'})" class="bg-white text-emerald-900 hover:bg-emerald-50 px-5 py-2.5 rounded-lg font-bold text-base shadow transition">
+                            See how a visit works <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+                                   <!-- Decorative Card / Info -->
+                   <div class="block md:flex justify-center">
+                    <div class="bg-emerald-800/50 border border-emerald-600/50 p-6 rounded-2xl shadow-xl backdrop-blur-sm max-w-sm text-center">
+                        <i class="fa-solid fa-user-doctor text-3xl md:text-7xl text-emerald-300 mb-4"></i>
+                        <h3 class="text-lg font-bold">Fast & Efficient Care</h3>
+                        <p class="text-xs text-emerald-200 mt-2">
+                            Seamless workflow from Reception to Nurse Triage, Doctor Consultation, Lab Tests, X-ray, and Pharmacy dispensing.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>   
+        
+        <!-- SECTION 2: Quick Info Strip -->
+        <section id="how-it-works" class="max-w-7xl w-full mx-auto px-4 py-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-800 mb-8">
+      How a visit works
+    </h2>
+ <!-- Cards Grid Container -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+      
+      <!-- Card 1 -->
+      <div class="bg-white border border-slate-200 shadow-xl rounded-xl p-6 transition hover:border-[#2dd4bf]/40">
+        
+        <span class="max-w-10 h-10 flex items-center justify-center text-2xl font-bold bg-emerald-100 rounded-full text-emerald-700 block mb-2">1</span>
+        <h3 class="text-lg font-bold text-slate-800 mb-2">Register</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">
+          Find the student by matric number and open the file.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white border border-slate-200 shadow-xl rounded-xl p-6 transition hover:border-[#2dd4bf]/40">
+        <span class="max-w-10 h-10 flex items-center justify-center text-2xl font-bold bg-emerald-100 rounded-full text-emerald-700 block mb-2">2</span>
+        <h3 class="text-lg font-bold text-slate-800 mb-2">Triage</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">
+          The nurse records vital signs. Emergencies go first.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white border border-slate-200 shadow-xl rounded-xl p-6 transition hover:border-[#2dd4bf]/40">
+        <span class="max-w-10 h-10 flex items-center justify-center text-2xl font-bold bg-emerald-100 rounded-full text-emerald-700 block mb-2">3</span>
+        <h3 class="text-lg font-bold text-slate-800 mb-2">Consultation</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">
+          The doctor sees the file, then requests a test or prescribes.
+        </p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-white border border-slate-200 shadow-xl rounded-xl p-6 transition hover:border-[#2dd4bf]/40">
+        <span class="max-w-10 h-10 flex items-center justify-center text-2xl font-bold bg-emerald-100 rounded-full text-emerald-700 block mb-2">4</span>
+        <h3 class="text-lg font-bold text-slate-800  mb-2">Pharmacy or Diagnostics</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">
+          Results go back to the doctor. Drugs are dispensed and stock updates.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+        <!-- SECTION 3: Quick Info Strip -->
+        <section class="bg-gradient-to-r from-emerald-900 via-emerald-800 to-teal-900 max-w-full mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-emerald-800/50 border border-emerald-600/50 shadow-xl backdrop-blur-sm p-4 rounded-xl flex items-center space-x-4">
+                <div class="bg-emerald-100 text-emerald-700 p-4 rounded-full">
+                    <i class="fa-solid fa-clock text-2xl"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white text-sm">Clinic Working Hours</h4>
+                    <p class="text-xs text-slate-200">Mon - Fri: 8:00 AM - 4:00 PM</p>
+                    <p class="text-xs text-emerald-200 font-semibold">24/7 Emergency Service</p>
+                </div>
+            </div>
+            
+              <div class="bg-emerald-800/50 border border-emerald-600/50 shadow-xl backdrop-blur-sm p-4 rounded-xl flex items-center space-x-4">
+                <div class="bg-amber-100 text-amber-700 p-4 rounded-full">
+                    <i class="fa-solid fa-phone-volume text-2xl"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white text-sm">Emergency Hotlines</h4>
+                    <p class="text-xs text-slate-200">Ambulance: +234 800 BUK CLINIC</p>
+                    <p class="text-xs text-emerald-200 font-semibold">Reception Desk: Ext 104</p>
+                </div>
+            </div>
+
+            <div class="bg-emerald-800/50 border border-emerald-600/50 shadow-xl backdrop-blur-sm p-4 rounded-xl flex items-center space-x-4">
+                <div class="bg-blue-100 text-blue-700 p-4 rounded-full">
+                    <i class="fa-solid fa-location-dot text-2xl"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white text-sm">Clinic Location</h4>
+                    <p class="text-xs text-slate-200">BUK New Campus, Kano State</p>
+                    <p class="text-xs text-emerald-200 font-semibold">Adjacent Ibrahim Gambari Sqaure</p>
+                </div>
+            </div>
+        </section>
+
+        
+
+    </main>
+    
+</body>
+</html>
